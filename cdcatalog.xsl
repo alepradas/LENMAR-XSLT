@@ -12,11 +12,13 @@
 
     </tr>
     <xsl:for-each select="catalog/cd">
+
+    <!-- Ordenar-->
     <xsl:sort select="artist"></xsl:sort>
     <xsl:sort select="price" data-type="number" order="descending"></xsl:sort>
    
 
-    
+    <!-- Condicional-->
     <xsl:if test="((price &lt; 10) and (price &gt; 7.5) or (price &gt; 12))">
     <tr>
       <td><xsl:value-of select="title"/></td>
