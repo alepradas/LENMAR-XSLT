@@ -9,20 +9,17 @@
       <th style="text-align:left">Title</th>
       <th style="text-align:left">Artist</th>
       <th style="text-align:left">Price</th>
-      <th style="text-align:left">Year</th>
 
     </tr>
     <xsl:for-each select="catalog/cd">
     <xsl:sort select="artist"></xsl:sort>
     <xsl:sort select="price" data-type="number" order="descending"></xsl:sort>
-    <xsl:sort select="year"></xsl:sort>
     
 
     <tr>
       <td><xsl:value-of select="title"/></td>
       <td><xsl:value-of select="artist"/></td>
       <td><xsl:value-of select="price"/></td>
-      <td><xsl:value-of select="year"/></td>
 
 
     </tr>
