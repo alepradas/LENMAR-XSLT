@@ -9,9 +9,11 @@
       <th style="text-align:left">Title</th>
       <th style="text-align:left">Artist</th>
       <th style="text-align:left">Price</th>
-
     </tr>
     <xsl:for-each select="catalog/cd">
+    <xsl:sort select="artist"></xsl:sort>
+    <xsl:sort select="price"></xsl:sort>
+
     <tr>
       <td><xsl:value-of select="title"/></td>
       <td><xsl:value-of select="artist"/></td>
