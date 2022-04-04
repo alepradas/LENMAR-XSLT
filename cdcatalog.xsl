@@ -22,8 +22,8 @@
     <xsl:if test="((price &lt; 10) and (price &gt; 7.5) or (price &gt; 12))">
     <tr>
       <td><xsl:value-of select="title"/></td>
-      <td><xsl:value-of select="artist"/></td>
-      <td><xsl:value-of select="price"/></td>
+      
+      
 
 
     </tr>
@@ -36,7 +36,7 @@
       </xsl:when>
       <!-- Añadimos otro when/condición para que si el precio está entre 0 y 8 el fondo se ponga de otro color -->
       <xsl:when test="price &gt; 0 and price &lt; 8">
-        <td bgcolor="#ff00ff">
+        <td bgcolor="#ff0000">
         <xsl:value-of select="artist"/></td>
         </xsl:when>
       <!-- Con otherwise, especificamos que se hace si la condición no se cumple-->
@@ -44,7 +44,14 @@
         <td><xsl:value-of select="artist"/></td>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:if>
+
+
+    <td><xsl:value-of select="price"/></td>
+
+
+
+    
+    </xsl:if>
     </xsl:for-each>
   </table>
 </body>
