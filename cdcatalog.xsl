@@ -27,6 +27,23 @@
 
 
     </tr>
+    <!-- Con choose elegimos entre varias opciones -->
+    <xsl:choose>
+      <!-- Con When especifcamos la condición a cumplir -->
+      <xsl:when test="price &gt; 10">
+        <td bgcolor="#ff00ff">
+        <xsl:value-of select="artist"/></td>
+      </xsl:when>
+      <!-- Añadimos otro when/condición para que si el precio está entre 0 y 8 el fondo se ponga de otro color -->
+      <xsl:when test="price &gt; 0 and price &lt; 8">
+        <td bgcolor="#ff00ff">
+        <xsl:value-of select="artist"/></td>
+        </xsl:when>
+      <!-- Con otherwise, especificamos que se hace si la condición no se cumple-->
+      <xsl:otherwise>
+        <td><xsl:value-of select="artist"/></td>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:if>
     </xsl:for-each>
   </table>
